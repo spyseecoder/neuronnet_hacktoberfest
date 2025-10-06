@@ -36,3 +36,175 @@
     transform: rotate(360deg);
   }
 }
+
+/* new layout */
+.app-root{display:flex;flex-direction:column;min-height:100vh}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:transparent;color:#e6eef8}
+.navbar .brand{font-weight:800;color:#e6eef8;text-decoration:none;font-size:20px}
+.navbar .nav-links a{margin-left:12px;color:#cfe8ff;text-decoration:none}
+.bg-canvas{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#0b1020}
+.bg-gradient{position:absolute;inset:0;background:linear-gradient(120deg,#07101a 0%, #081226 40%, #09132b 100%);opacity:0.95}
+.bg-lines{position:absolute;inset:0;pointer-events:none}
+.bg-lines span{position:absolute;width:1px;height:120%;background:linear-gradient(#00ffd5 0%, rgba(0,0,0,0) 60%);opacity:0.06;transform:skewY(-12deg);animation: drift 18s linear infinite}
+.bg-lines span:nth-child(1){left:5%;animation-duration:14s}
+.bg-lines span:nth-child(2){left:15%;animation-duration:20s}
+.bg-lines span:nth-child(3){left:30%;animation-duration:16s}
+.bg-lines span:nth-child(4){left:45%;animation-duration:22s}
+.bg-lines span:nth-child(5){left:60%;animation-duration:18s}
+.bg-lines span:nth-child(6){left:75%;animation-duration:24s}
+.bg-lines span:nth-child(7){left:90%;animation-duration:20s}
+@keyframes drift{0%{transform:translateY(-20%) skewY(-12deg)}50%{transform:translateY(20%) skewY(-12deg)}100%{transform:translateY(-20%) skewY(-12deg)}}
+
+/* layout */
+main{flex:1;padding:40px 28px;color:#e6eef8}
+.container{max-width:1100px;margin:0 auto}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:18px;margin:18px 0;border-radius:10px;box-shadow:0 6px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+.page .actions{display:flex;gap:8px;margin-top:8px}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#e6eef8;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#041124;border:none}
+.top{display:flex;justify-content:space-between;align-items:center}
+.stats div{margin-left:12px}
+.user-row{display:flex;gap:8px;padding:8px 0;align-items:center}
+.user-row.header{font-weight:700;border-bottom:1px solid #eee;padding-bottom:8px}
+.user-row .col{flex:1}
+.user-row .col.sl{flex:0 0 36px}
+.mini{font-size:12px;color:#666;margin-bottom:8px}
+.form-inline{display:flex;gap:8px}
+input{padding:8px;border:1px solid #ddd;border-radius:6px;flex:1}
+
+@media (max-width:600px){
+  .top{flex-direction:column;align-items:flex-start}
+  .user-row{flex-direction:column;align-items:flex-start}
+  .user-row .col.sl{display:none}
+  .navbar{flex-direction:column;align-items:flex-start}
+  .navbar .nav-links{margin-top:8px}
+}
+
+.error{color:#b00020}
+
+.footer{padding:12px;text-align:center;background:#f6f8fb}
+
+/* prettier UI */
+.muted{color:rgba(230,238,248,0.65)}
+.stat-card{display:flex;gap:16px;padding:10px 16px;align-items:center}
+.stat{display:flex;flex-direction:column;align-items:center;padding:6px}
+.stat .big{font-size:20px;font-weight:700}
+
+.badge{display:inline-block;background:linear-gradient(90deg,#10b981,#34d399);color:#042e1f;padding:4px 10px;border-radius:999px;font-weight:600;margin-right:8px}
+.first-repo a{color:#0b69d6}
+
+.user-block{border-bottom:1px dashed #eee;padding-bottom:10px;margin-bottom:8px}
+
+.profile-card .profile-header{display:flex;gap:12px;align-items:center}
+.profile-card .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;color:#041124;font-weight:800;font-size:24px}
+.profile-card .meta{color:#6b7280}
+.profile-form{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.repo-list{margin-top:8px}
+.repo-item{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-bottom:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))}
+.repo-item a{color:#9fe8ff}
+
+/* stacked labeled form rows */
+.form-vertical{display:flex;flex-direction:column;gap:12px}
+.form-row{display:flex;flex-direction:column;gap:6px}
+.form-row label{font-size:13px;color:rgba(230,238,248,0.75);font-weight:600}
+.form-row input{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#e6eef8}
+.form-row .muted{font-size:12px}
+
+.user-row .col.name{font-weight:600}
+
+/* hover subtle */
+.user-row:hover{background:#fbfdff}
+.card:hover{transform:translateY(-3px);transition:transform .16s}
+
+/* Pixel-themed hacktoberfest style */
+.bg-gradient {
+  background-color: #14162b;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.02), transparent 20%),
+    linear-gradient(120deg,#0b1020 0%, #0f1530 100%);
+  background-size: 40px 40px, 40px 40px, 200px 200px, cover;
+}
+
+/* remove underlines from links globally (use color/weight for emphasis instead) */
+a {
+  text-decoration: none;
+}
+
+/* Terminal-like styling for command snippets / <pre> blocks */
+.terminal, .card pre, pre.cmd {
+  font-family: 'Courier New', Courier, monospace;
+  background: #000000; /* true black terminal background */
+  color: #7ef6a1; /* green text */
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: inset 0 -6px 18px rgba(255,255,255,0.02), 0 6px 18px rgba(0,0,0,0.8);
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0.5rem 0 0.75rem 0;
+}
+.card pre { margin: 0; }
+
+/* subtle link hover: color change, but still no underline */
+a:hover, a:focus { color: #cfe8ff; }
+
+/* terminal header and colorized lines */
+.terminal-header{font-family:'Courier New',monospace;color:#7ef6a1;font-weight:700;margin:8px 0}
+.term-line{display:flex;gap:12px;align-items:flex-start;padding:6px 0}
+.prompt{color:#9fe8ff;opacity:0.95;min-width:80px}
+.cmd{color:#7ef6a1}
+.term-comment{margin-top:10px;color:#8b9398;font-style:italic}
+
+/* Contributions table */
+.contrib-table{width:100%;border-collapse:separate;border-spacing:0 12px}
+.contrib-table thead th{background:transparent;text-align:left;padding:12px 16px;color:#dbeafe;border-bottom:1px solid rgba(255,255,255,0.06)}
+.contrib-table tbody td{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:12px 16px;border:1px solid rgba(255,255,255,0.03);}
+.contrib-table tbody tr{box-shadow:0 6px 18px rgba(2,6,23,0.45);border-radius:8px}
+.contrib-table .td-index{width:48px;font-weight:700}
+.contrib-table .td-name{font-weight:700}
+.contrib-table .td-contrib{width:160px;text-align:left}
+/* repo-row removed - simple table rows used now */
+
+.link-btn{display:inline-block;padding:6px 10px;border-radius:8px;color:#041124;text-decoration:none;font-weight:700}
+.link-btn.github{background:linear-gradient(90deg,#cbd5e1,#9fb3ff);}
+.link-btn.holopin{background:linear-gradient(90deg,#a7f3d0,#6ee7b7);}
+.link-btn:hover{filter:brightness(0.95);}
+
+/* announcement card inside Resources */
+.announcement{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:12px;border-radius:8px;margin-top:12px;border:1px solid rgba(255,255,255,0.03)}
+.announcement h3{margin:0 0 8px 0;color:#cfe8ff}
+.announcement ul{margin:8px 0 0 18px}
+.announcement li{margin-bottom:8px}
+
+.badge-preview{width:100%;height:auto;border-radius:8px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 16px rgba(2,6,23,0.6)}
+
+@media (max-width:800px){
+  .contrib-table thead{display:none}
+  .contrib-table tbody td{display:block;width:100%}
+  .contrib-table tbody tr{display:block;margin-bottom:12px}
+}
+
+.hero{padding:80px 0 40px;text-align:center;color: #f6f9ff}
+.hero .brandline{display:block;margin-bottom:18px;color:#cfe8ff;opacity:0.9}
+.hero-title{font-family: 'Courier New', Courier, monospace;font-weight:800;font-size:clamp(32px,6vw,64px);letter-spacing:2px;text-shadow:0 6px 30px rgba(0,0,0,0.6),0 2px 1px rgba(255,255,255,0.02);}
+.hero-sub{margin-top:14px;color:rgba(230,238,248,0.75)}
+
+.navbar{backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px 28px;border-radius:10px}
+.navbar .nav-links{display:flex;gap:18px;align-items:center}
+.navbar .nav-links a{color:rgba(230,238,248,0.9);text-decoration:none;font-weight:700}
+.navbar .brand{font-family: 'Courier New', monospace;letter-spacing:1px}
+
+/* profile header large style (no image) */
+.profile-header{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.profile-boot{font-family: 'Courier New', monospace;color:#a7f3d0;font-weight:700}
+.profile-hello{font-family: 'Courier New', monospace;font-size:48px;color:#fff;margin:0 0 8px}
+.profile-actions{display:flex;gap:10px;margin-top:8px}
+
+@media (max-width:900px){
+  .profile-hello{font-size:32px}
+  main{padding:24px}
+}
